@@ -24,10 +24,10 @@ new class extends Component
         <i class="fas fa-graduation-cap" style="margin-right: 10px; margin-left: 20px"></i>E-Learn
     </a>
     <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Home1</a></li>
+        <li><a href="#services">Services1</a></li>
+        <li><a href="#faq">FAQ1</a></li>
+        <li><a href="#contact">Contact1</a></li>
     </ul>
 
     <div class="auth-buttons" style="margin-right: 20px;">
