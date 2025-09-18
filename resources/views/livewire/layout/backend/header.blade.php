@@ -87,7 +87,7 @@
                         <li>
                             <div class="dropdown-item-text">
                                 <div class="fw-bold">{{ auth()->user()->name }}</div>
-                                <small class="text-muted">{{ auth()->user()->getRoleNames()->first() ?? 'User' }}</small>
+                                <small class="text-muted">{{ auth()->user()->role ?? 'User' }}</small>
                             </div>
                         </li>
                         <li><hr class="dropdown-divider"></li>
