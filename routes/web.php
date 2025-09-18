@@ -35,7 +35,7 @@ Route::view('profile', 'profile')
     ->name('profile');
 
     Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('dashboard', AdminDashboard::class)->name('admin.dashboard');
+        Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
     });
 
 require __DIR__.'/auth.php';
