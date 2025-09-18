@@ -19,19 +19,19 @@
             </a>
         </li>
 
-        <li class="{{ request()->routeIs('users.*') || request()->routeIs('roles.*') ? 'active' : '' }}">
+        <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-people"></i></div>
                 <div class="menu-title">User Management</div>
             </a>
-            {{-- <ul>
-                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
-                    <a href="{{ route('users.index') }}"><i class="bi bi-arrow-right-short"></i>Users</a>
+            <ul>
+                <li class="{{ request()->routeIs('admin.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.users') }}"><i class="bi bi-arrow-right-short"></i>Users</a>
                 </li>
-                <li class="{{ request()->routeIs('roles.*') ? 'active' : '' }}">
+                {{-- <li class="{{ request()->routeIs('roles.*') ? 'active' : '' }}">
                     <a href="{{ route('roles.index') }}"><i class="bi bi-arrow-right-short"></i>Roles & Permissions</a>
-                </li>
-            </ul> --}}
+                </li> --}}
+            </ul>
         </li>
 
 

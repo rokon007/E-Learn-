@@ -40,7 +40,7 @@ class UserManagement extends Component
 
         return view('livewire.backend.admin.user-management', [
             'users' => $users
-        ]);
+        ])->layout('livewire.layout.backend.app');
     }
 
     public function updatedSelectAll($value)
