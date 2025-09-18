@@ -1,9 +1,7 @@
 <aside class="sidebar-wrapper sidebar-theme" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            @php
-                $logoPath = \App\Models\SystemSetting::where('key', 'shop_logo')->value('value');
-            @endphp
+
 
             @if($logoPath && Storage::disk('public')->exists($logoPath))
                 <img src="{{ asset('storage/app/public/' . $logoPath) }}" class="logo-icon" alt="shop logo">
