@@ -1,4 +1,7 @@
 <div>
+    @section('title')
+        <title>Dashboard</title>
+    @endsection
     <div class="dashboard-header">
         <h1 class="dashboard-title">Dashboard</h1>
         <div class="user-info">
