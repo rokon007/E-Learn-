@@ -47,22 +47,22 @@
             <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/Google_Pay.webp')}}" alt="Google_Pay" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/nagad.webp')}}" alt="nagad" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/Paytm.png')}}" alt="Paytm" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/PhonePe.png')}}" alt="PhonePe" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/roket.png')}}" alt="roket" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
+            <img src="{{asset('assets/img/payment/upay.png')}}" alt="upay" class="w-24 h-full"/>
         </div>
     </div>
    @section('js')
