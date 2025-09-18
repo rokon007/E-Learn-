@@ -3,6 +3,7 @@
 namespace App\Livewire\Frontend\Landing\Auth;
 
 use Livewire\Component;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 
 class Login extends Component
@@ -36,7 +37,15 @@ class Login extends Component
             // }
 
             // Redirect to dashboard
-            return redirect()->intended('/dashboard');
+            //return redirect()->intended('/dashboard');
+            $user = auth()->user();
+            // Add a small delay before redirecting to allow the alert to show
+            if ($user->role == 'admin') {
+                $this->js('setTimeout(() => { window.location.href = "' . RouteServiceProvider::ADMINHOME . '"; }, 1500);');
+            } else {
+                $redirectUrl = session('url.intended', RouteServiceProvider::HOME);
+                $this->js('setTimeout(() => { window.location.href = "' . $redirectUrl . '"; }, 1500);');
+            }
         }
 
         $this->errorMessage = 'Invalid credentials. Please try again.';
