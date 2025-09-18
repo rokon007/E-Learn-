@@ -871,6 +871,7 @@
         });
     </script>
     @livewireScripts
+     <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
     <script>
         // Mobile Sidebar Functionality
