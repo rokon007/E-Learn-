@@ -4,7 +4,27 @@
     @endsection
 
     @section('css')
+        <style>
+            .w-24 {
+                width: 6rem;
+            }
+            .h-full {
+                height: 100%;
+            }
+            img, video {
+                max-width: 100%;
+                height: auto;
+            }
+            img, svg, video, canvas, audio, iframe, embed, object {
+                display: block;
+                vertical-align: middle;
+            }
+            img {
+                overflow-clip-margin: content-box;
+                overflow: clip;
+            }
 
+        </style>
     @endsection
 
     <div class="dashboard-header">
@@ -24,25 +44,25 @@
     </div>
     <div class="dashboard-cards">
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
         <div class="card">
-            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash"/>
+            <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bikash" class="w-24 h-full"/>
         </div>
     </div>
    @section('js')
