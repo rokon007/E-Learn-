@@ -1,30 +1,26 @@
 <div>
     @section('title')
-        <title>Admin | Inventory management</title>
+        Admin | User Management
     @endsection
     @section('css')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
               integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
     @endsection
-    <main class="page-content">
+    <main>
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-          <div class="breadcrumb-title pe-3">Inventory</div>
+          <div class="breadcrumb-title pe-3">Admin</div>
           <div class="ps-3">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Product Inventory Management</li>
+                <li class="breadcrumb-item active" aria-current="page">User Management</li>
               </ol>
             </nav>
           </div>
-          <div class="ms-auto">
-            <div class="btn-group">
-              <a href="{{route('products.index')}}" class="btn btn-primary">Back</a>
-            </div>
-         </div>
+
         </div>
         <!--end breadcrumb-->
         <div class="row">
