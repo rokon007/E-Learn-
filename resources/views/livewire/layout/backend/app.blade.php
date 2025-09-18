@@ -11,7 +11,7 @@
     <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png" />
     @yield('css')
     <!-- Styles -->
-    @include('layout.backend.styles')
+    @include('livewire.layout.backend.styles')
 
     @livewireStyles
 </head>
@@ -20,11 +20,11 @@
     <!--start wrapper-->
     <div class="wrapper">
         <!--start top header-->
-        @include('layout.backend.header')
+        @include('livewire.layout.backend.header')
         <!--end top header-->
 
         <!--start sidebar -->
-        @include('layout.backend.sidebar')
+        @include('livewire.layout.backend.sidebar')
         <!--end sidebar -->
 
         <!--start content-->
@@ -50,7 +50,7 @@
     <!--end wrapper-->
 
     <!-- Scripts -->
-    @include('layout.backend.scripts')
+    @include('livewire.layout.backend.scripts')
     @livewireScripts
     @yield('js')
     @stack('scripts')
