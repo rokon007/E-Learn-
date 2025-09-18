@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Frontend\Landing\Welcome;
 use App\Livewire\Frontend\User\Dashboard;
 use App\Livewire\Backend\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Backend\Admin\UserManagement;
 use App\Http\Controllers\RegistrationController;
 
 /*
@@ -34,8 +35,10 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-    Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
-    });
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
+    Route::get('/users', UserManagement::class)->name('admin.users');
+});
 
 require __DIR__.'/auth.php';
