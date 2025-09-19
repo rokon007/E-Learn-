@@ -12,6 +12,8 @@
                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
                 margin-bottom: 30px;
                 animation: fadeIn 0.6s ease forwards;
+                max-width: 600px;
+                margin: 0 auto;
             }
 
             .password-header {
@@ -46,7 +48,6 @@
             }
 
             .password-form {
-                max-width: 500px;
                 margin: 0 auto;
             }
 
@@ -200,6 +201,14 @@
                 color: #64748b;
             }
 
+            .form-actions {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(20px); }
                 to { opacity: 1; transform: translateY(0); }
@@ -208,6 +217,7 @@
             @media (max-width: 768px) {
                 .password-section {
                     padding: 20px;
+                    margin: 0 15px;
                 }
 
                 .password-title {
@@ -236,7 +246,8 @@
             <h2 class="password-title">Update Password</h2>
             <p class="password-subtitle">Ensure your account is using a long, random password to stay secure.</p>
         </div>
-        <form wire:submit="updatePassword" class="password-form">
+
+        <form wire:submit.prevent="updatePassword" class="password-form">
             <div class="form-group">
                 <label for="update_password_current_password" class="form-label">
                     <i class="fas fa-lock"></i> Current Password
@@ -290,7 +301,7 @@
                 @enderror
             </div>
 
-            <div class="form-actions" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+            <div class="form-actions">
                 <button type="submit" class="btn-update">
                     <i class="fas fa-save"></i> Update Password
                 </button>
@@ -298,17 +309,17 @@
                 <div wire:loading wire:target="updatePassword" class="success-message">
                     <i class="fas fa-spinner fa-spin"></i> Updating...
                 </div>
-
-                <x-action-message class="success-message" on="password-updated">
-                    <i class="fas fa-check-circle"></i> {{ __('Password updated successfully!') }}
-                </x-action-message>
             </div>
         </form>
     </section>
 
    @section('js')
+        <!-- Include SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                // Password strength indicator
                 const passwordInput = document.getElementById('update_password_password');
                 const strengthMeter = document.getElementById('password-strength-meter');
                 const reqLength = document.getElementById('req-length');
@@ -373,6 +384,17 @@
                         }
                     });
                 }
+
+                // Listen for password updated event
+                Livewire.on('password-updated', () => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Your password has been updated successfully.',
+                        timer: 3000,
+                        showConfirmButton: false
+                    });
+                });
             });
         </script>
    @endsection

@@ -26,7 +26,6 @@ class ChangePassword extends Component
             ]);
         } catch (ValidationException $e) {
             $this->reset('current_password', 'password', 'password_confirmation');
-
             throw $e;
         }
 
@@ -36,7 +35,8 @@ class ChangePassword extends Component
 
         $this->reset('current_password', 'password', 'password_confirmation');
 
-        session()->flash('message', 'Password updated successfully!');
+        // Dispatch event for SweetAlert
+        $this->dispatch('password-updated');
     }
 
     public function render()
