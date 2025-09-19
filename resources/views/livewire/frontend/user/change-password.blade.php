@@ -236,75 +236,76 @@
             <h2 class="password-title">Update Password</h2>
             <p class="password-subtitle">Ensure your account is using a long, random password to stay secure.</p>
         </header>
-
-        <form wire:submit="updatePassword" class="password-form">
-            <div class="form-group">
-                <label for="update_password_current_password" class="form-label">
-                    <i class="fas fa-lock"></i> Current Password
-                </label>
-                <input wire:model="current_password" id="update_password_current_password" name="current_password" type="password" class="form-input @error('current_password') error @enderror" autocomplete="current-password" />
-                @error('current_password')
-                    <div class="error-message">
-                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="update_password_password" class="form-label">
-                    <i class="fas fa-key"></i> New Password
-                </label>
-                <input wire:model="password" id="update_password_password" name="password" type="password" class="form-input @error('password') error @enderror" autocomplete="new-password" />
-                <div class="password-strength">
-                    <div class="strength-meter" id="password-strength-meter"></div>
-                </div>
-                <div class="password-requirements">
-                    <div class="requirement unmet" id="req-length">
-                        <i class="fas fa-circle"></i> At least 8 characters
-                    </div>
-                    <div class="requirement unmet" id="req-uppercase">
-                        <i class="fas fa-circle"></i> One uppercase letter
-                    </div>
-                    <div class="requirement unmet" id="req-lowercase">
-                        <i class="fas fa-circle"></i> One lowercase letter
-                    </div>
-                    <div class="requirement unmet" id="req-number">
-                        <i class="fas fa-circle"></i> One number
-                    </div>
-                </div>
-                @error('password')
-                    <div class="error-message">
-                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="update_password_password_confirmation" class="form-label">
-                    <i class="fas fa-check-double"></i> Confirm Password
-                </label>
-                <input wire:model="password_confirmation" id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-input @error('password_confirmation') error @enderror" autocomplete="new-password" />
-                @error('password_confirmation')
-                    <div class="error-message">
-                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-actions" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
-                <button type="submit" class="btn-update">
-                    <i class="fas fa-save"></i> Update Password
-                </button>
-
-                <div wire:loading wire:target="updatePassword" class="success-message">
-                    <i class="fas fa-spinner fa-spin"></i> Updating...
+        <div style="margin-top: 50px;">
+            <form wire:submit="updatePassword" class="password-form">
+                <div class="form-group">
+                    <label for="update_password_current_password" class="form-label">
+                        <i class="fas fa-lock"></i> Current Password
+                    </label>
+                    <input wire:model="current_password" id="update_password_current_password" name="current_password" type="password" class="form-input @error('current_password') error @enderror" autocomplete="current-password" />
+                    @error('current_password')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
-                <x-action-message class="success-message" on="password-updated">
-                    <i class="fas fa-check-circle"></i> {{ __('Password updated successfully!') }}
-                </x-action-message>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="update_password_password" class="form-label">
+                        <i class="fas fa-key"></i> New Password
+                    </label>
+                    <input wire:model="password" id="update_password_password" name="password" type="password" class="form-input @error('password') error @enderror" autocomplete="new-password" />
+                    <div class="password-strength">
+                        <div class="strength-meter" id="password-strength-meter"></div>
+                    </div>
+                    <div class="password-requirements">
+                        <div class="requirement unmet" id="req-length">
+                            <i class="fas fa-circle"></i> At least 8 characters
+                        </div>
+                        <div class="requirement unmet" id="req-uppercase">
+                            <i class="fas fa-circle"></i> One uppercase letter
+                        </div>
+                        <div class="requirement unmet" id="req-lowercase">
+                            <i class="fas fa-circle"></i> One lowercase letter
+                        </div>
+                        <div class="requirement unmet" id="req-number">
+                            <i class="fas fa-circle"></i> One number
+                        </div>
+                    </div>
+                    @error('password')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="update_password_password_confirmation" class="form-label">
+                        <i class="fas fa-check-double"></i> Confirm Password
+                    </label>
+                    <input wire:model="password_confirmation" id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-input @error('password_confirmation') error @enderror" autocomplete="new-password" />
+                    @error('password_confirmation')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-actions" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+                    <button type="submit" class="btn-update">
+                        <i class="fas fa-save"></i> Update Password
+                    </button>
+
+                    <div wire:loading wire:target="updatePassword" class="success-message">
+                        <i class="fas fa-spinner fa-spin"></i> Updating...
+                    </div>
+
+                    <x-action-message class="success-message" on="password-updated">
+                        <i class="fas fa-check-circle"></i> {{ __('Password updated successfully!') }}
+                    </x-action-message>
+                </div>
+            </form>
+        </div>
     </section>
 
    @section('js')
