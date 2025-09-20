@@ -28,9 +28,9 @@
                 <li class="{{ request()->routeIs('admin.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.users') }}"><i class="bi bi-arrow-right-short"></i>Users</a>
                 </li>
-                {{-- <li class="{{ request()->routeIs('roles.*') ? 'active' : '' }}">
-                    <a href="{{ route('roles.index') }}"><i class="bi bi-arrow-right-short"></i>Roles & Permissions</a>
-                </li> --}}
+                <li class="{{ request()->routeIs('admin.withdrawal_requests') ? 'active' : '' }}">
+                    <a href="{{ route('admin.withdrawal_requests') }}"><i class="bi bi-arrow-right-short"></i>Withdrawal Requests</a>
+                </li>
             </ul>
         </li>
 

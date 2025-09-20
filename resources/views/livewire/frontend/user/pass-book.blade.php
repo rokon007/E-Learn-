@@ -276,7 +276,7 @@
             <i class="fas fa-search search-icon"></i>
             <input
                 type="text"
-                wire:model.debounce.300ms="search"
+                wire:model.live="search"
                 class="search-input"
                 placeholder="Search transactions..."
             >

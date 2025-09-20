@@ -17,6 +17,7 @@ use App\Livewire\Frontend\User\Notification;
 
 use App\Livewire\Backend\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Backend\Admin\UserManagement;
+use App\Livewire\Backend\Admin\WithdrawalRequests;
 use App\Http\Controllers\RegistrationController;
 
 /*
@@ -65,6 +66,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', AdminDashboard::class)->name('admin.dashboard');
     Route::get('/users', UserManagement::class)->name('admin.users');
+    Route::get('/withdrawal-requests', WithdrawalRequests::class)->name('admin.withdrawal_requests');
 });
 
 require __DIR__.'/auth.php';
