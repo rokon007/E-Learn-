@@ -269,6 +269,262 @@
                 transform: translateX(5px);
             }
 
+            /* Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 10000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .modal-content {
+                background-color: white;
+                margin: 5% auto;
+                padding: 0;
+                border-radius: 15px;
+                width: 100%;
+                max-width: 500px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                animation: modalFadeIn 0.3s;
+                position: relative;
+            }
+
+            @keyframes modalFadeIn {
+                from { opacity: 0; transform: translateY(-50px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .modal-header {
+                padding: 20px;
+                border-bottom: 1px solid #e2e8f0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+                color: var(--text-dark);
+                font-weight: 600;
+            }
+
+            .close-modal {
+                color: #64748b;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .close-modal:hover {
+                color: var(--text-dark);
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .modal-step {
+                display: none;
+            }
+
+            .modal-step.active {
+                display: block;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--text-dark);
+            }
+
+            .form-input {
+                width: 100%;
+                padding: 12px 16px;
+                border: 2px solid #e2e8f0;
+                border-radius: 10px;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            .form-input:focus {
+                border-color: var(--accent-color);
+                box-shadow: 0 0 0 3px rgba(76, 132, 255, 0.2);
+                outline: none;
+            }
+
+            .form-input.error {
+                border-color: #ef4444;
+            }
+
+            .error-message {
+                color: #ef4444;
+                font-size: 0.85rem;
+                margin-top: 5px;
+            }
+
+            .modal-footer {
+                padding: 20px;
+                border-top: 1px solid #e2e8f0;
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+
+            .btn-modal {
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: none;
+            }
+
+            .btn-modal-primary {
+                background: linear-gradient(135deg, var(--accent-color), #3b82f6);
+                color: white;
+            }
+
+            .btn-modal-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(76, 132, 255, 0.3);
+            }
+
+            .btn-modal-secondary {
+                background: #e2e8f0;
+                color: #64748b;
+            }
+
+            .btn-modal-secondary:hover {
+                background: #cbd5e1;
+            }
+
+            .selected-method-display {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .method-logo-small {
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .method-name {
+                font-weight: 600;
+                color: var(--text-dark);
+            }
+
+            /* History Styles */
+            .history-section {
+                margin-top: 50px;
+            }
+
+            .history-title {
+                font-size: 1.5rem;
+                color: var(--text-dark);
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .history-list {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            .history-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .history-item:last-child {
+                border-bottom: none;
+            }
+
+            .history-info {
+                flex: 1;
+            }
+
+            .history-method {
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 5px;
+            }
+
+            .history-details {
+                color: #64748b;
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+
+            .history-date {
+                color: #94a3b8;
+                font-size: 0.8rem;
+            }
+
+            .history-amount {
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+
+            .history-status {
+                padding: 5px 10px;
+                border-radius: 12px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                margin-left: 10px;
+            }
+
+            .status-pending {
+                background-color: rgba(245, 158, 11, 0.1);
+                color: #f59e0b;
+            }
+
+            .status-approved {
+                background-color: rgba(16, 185, 129, 0.1);
+                color: #10b981;
+            }
+
+            .status-rejected {
+                background-color: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+            }
+
+            .empty-state {
+                text-align: center;
+                padding: 60px 20px;
+            }
+
+            .empty-icon {
+                font-size: 4rem;
+                color: #cbd5e1;
+                margin-bottom: 20px;
+            }
+
+            .empty-text {
+                color: #64748b;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .empty-subtext {
+                color: #94a3b8;
+                font-size: 0.9rem;
+            }
+
             /* Animation */
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(20px); }
@@ -298,7 +554,7 @@
                 <i class="fas fa-wallet"></i>
             </div>
         </div>
-        <div class="balance-card-value"><i class="fas fa-bangladeshi-taka-sign"></i> 140.2 ৳</div>
+        <div class="balance-card-value"><i class="fas fa-bangladeshi-taka-sign"></i> {{ auth()->user()->balance }} ৳</div>
         <p class="balance-card-text">Your withdrawal account is active. You can withdraw only after 7 days from your last withdrawal!</p>
     </div>
 
@@ -306,96 +562,125 @@
         <h2 class="section-title">Select Payment Method</h2>
 
         <div class="payment-methods">
-            <div class="payment-card animated delay-1" data-method="bikash">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/bikash.png')}}" alt="bKash">
+            @foreach(['bikash', 'google-pay', 'nagad', 'paytm', 'phonepe', 'roket', 'upay'] as $index => $method)
+                <div class="payment-card animated delay-{{ $index % 4 + 1 }}" data-method="{{ $method }}" wire:click="selectMethod('{{ $method }}')">
+                    <div class="payment-image">
+                        <img src="{{ asset('assets/img/payment/' . $method . '.png') }}" alt="{{ ucfirst($method) }}">
+                    </div>
+                    <div class="payment-name">{{ ucfirst($method) }}</div>
                 </div>
-                <div class="payment-name">bKash</div>
-            </div>
-
-            <div class="payment-card animated delay-2" data-method="google-pay">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/Google_Pay.webp')}}" alt="Google Pay">
-                </div>
-                <div class="payment-name">Google Pay</div>
-            </div>
-
-            <div class="payment-card animated delay-3" data-method="nagad">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/nagad.webp')}}" alt="Nagad">
-                </div>
-                <div class="payment-name">Nagad</div>
-            </div>
-
-            <div class="payment-card animated delay-4" data-method="paytm">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/Paytm.png')}}" alt="Paytm">
-                </div>
-                <div class="payment-name">Paytm</div>
-            </div>
-
-            <div class="payment-card animated delay-1" data-method="phonepe">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/PhonePe.png')}}" alt="PhonePe">
-                </div>
-                <div class="payment-name">PhonePe</div>
-            </div>
-
-            <div class="payment-card animated delay-2" data-method="roket">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/roket.png')}}" alt="Roket">
-                </div>
-                <div class="payment-name">Roket</div>
-            </div>
-
-            <div class="payment-card animated delay-3" data-method="upay">
-                <div class="payment-image">
-                    <img src="{{asset('assets/img/payment/upay.png')}}" alt="Upay">
-                </div>
-                <div class="payment-name">Upay</div>
-            </div>
+            @endforeach
         </div>
 
-        <div class="continue-btn-container">
-            <button class="btn-continue" id="continueBtn">
-                Continue Next <i class="fas fa-arrow-right"></i>
-            </button>
+        <!-- Withdrawal Request History -->
+        <div class="history-section">
+            <h2 class="history-title">Withdrawal History</h2>
+            <div class="history-list">
+                @if($withdrawalRequests && count($withdrawalRequests) > 0)
+                    @foreach($withdrawalRequests as $request)
+                        <div class="history-item">
+                            <div class="history-info">
+                                <div class="history-method">
+                                    {{ ucfirst($request->payment_method) }}
+                                    <span class="history-status status-{{ $request->status }}">
+                                        {{ ucfirst($request->status) }}
+                                    </span>
+                                </div>
+                                <div class="history-details">
+                                    Mobile: {{ $request->mobile_number }} | Amount: {{ $request->amount }} ৳
+                                </div>
+                                <div class="history-date">
+                                    {{ $request->created_at->format('M j, Y \\a\\t g:i A') }}
+                                </div>
+                            </div>
+                            <div class="history-amount">
+                                -{{ $request->amount }} ৳
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 class="empty-text">No withdrawal history</h3>
+                        <p class="empty-subtext">You haven't made any withdrawal requests yet.</p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdrawal Modal -->
+    <div id="withdrawalModal" class="modal" style="@if($showModal) display: block; @else display: none; @endif">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Withdrawal Request</h2>
+                <span class="close-modal" wire:click="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Method and Mobile Number -->
+                <div class="modal-step {{ $currentStep == 1 ? 'active' : '' }}">
+                    <div class="selected-method-display">
+                        <img src="{{ asset('assets/img/payment/' . $selectedMethod . '.png') }}" alt="{{ ucfirst($selectedMethod) }}" class="method-logo-small">
+                        <div class="method-name">{{ ucfirst($selectedMethod) }}</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="text" wire:model="mobileNumber" class="form-input @error('mobileNumber') error @enderror" placeholder="Enter your {{ ucfirst($selectedMethod) }} mobile number">
+                        @error('mobileNumber') <div class="error-message">{{ $message }}</div> @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Amount</label>
+                        <input type="number" wire:model="amount" class="form-input @error('amount') error @enderror" placeholder="Enter amount">
+                        @error('amount') <div class="error-message">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+                <!-- Step 2: Password Confirmation -->
+                <div class="modal-step {{ $currentStep == 2 ? 'active' : '' }}">
+                    <div class="form-group">
+                        <label class="form-label">Your Password</label>
+                        <input type="password" wire:model="password" class="form-input @error('password') error @enderror" placeholder="Enter your password to confirm">
+                        @error('password') <div class="error-message">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @if($currentStep == 1)
+                    <button type="button" class="btn-modal btn-modal-secondary" wire:click="closeModal">Cancel</button>
+                    <button type="button" class="btn-modal btn-modal-primary" wire:click="nextStep">Next</button>
+                @else
+                    <button type="button" class="btn-modal btn-modal-secondary" wire:click="previousStep">Back</button>
+                    <button type="button" class="btn-modal btn-modal-primary" wire:click="nextStep">Confirm Withdrawal</button>
+                @endif
+            </div>
         </div>
     </div>
 
    @section('js')
+        <!-- Include SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Select payment method functionality
-                const paymentCards = document.querySelectorAll('.payment-card');
-                let selectedMethod = null;
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('withdrawalModal');
+                if (event.target === modal) {
+                    @this.closeModal();
+                }
+            });
 
-                paymentCards.forEach(card => {
-                    card.addEventListener('click', function() {
-                        // Remove selected class from all cards
-                        paymentCards.forEach(c => c.classList.remove('selected'));
-
-                        // Add selected class to clicked card
-                        this.classList.add('selected');
-
-                        // Store selected method
-                        selectedMethod = this.getAttribute('data-method');
-
-                        console.log('Selected payment method:', selectedMethod);
-                    });
-                });
-
-                // Continue button functionality
-                const continueBtn = document.getElementById('continueBtn');
-
-                continueBtn.addEventListener('click', function() {
-                    if (!selectedMethod) {
-                        alert('Please select a payment method first');
-                        return;
-                    }
-
-                    alert(`Proceeding with ${selectedMethod} as payment method`);
-                    // Here you would typically redirect to the next step or show a form
+            // Listen for success message
+            Livewire.on('showSuccess', (message) => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: message,
+                    timer: 3000,
+                    showConfirmButton: false
                 });
             });
         </script>
