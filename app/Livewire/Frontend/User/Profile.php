@@ -17,7 +17,7 @@ class Profile extends Component
     public $currentStep = 1;
     public $receiver;
     public $showModal = false;
-
+    //profile
     protected $rules = [
         'receiver_id' => 'required|exists:users,unique_id',
         'amount' => 'required|numeric|min:1',

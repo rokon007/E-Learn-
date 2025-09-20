@@ -201,7 +201,7 @@
             }
         </style>
     @endsection
-
+        {{-- Profile  --}}
     <div class="dashboard-header">
         <h1 class="dashboard-title">Profile</h1>
     </div>
